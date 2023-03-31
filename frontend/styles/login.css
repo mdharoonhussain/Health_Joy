@@ -136,31 +136,11 @@ a:hover {
     margin: 20px;
 }
 
+/* HEADER CSS ------- */
 
-/* common cs */
 
 
-.sub-menu {
-	display: flex;
-	height: 150px;
-	width: 100vw;
-	margin-top: 20px;
-	align-items: center;
-	padding-left: -10%;
-	justify-content: center;
-}
-ul li ul.sub-menu {
-	min-width: 100%;
-	background: #313443;
-	display: none;
-	position: absolute;
-	z-index: 999;
-	left: 0;
-}
-ul li:hover ul.sub-menu {
-	display: flex;
-	color: #fff;
-}
+
 .menu-content {
 	color: white;
 	margin: 30px;
@@ -225,7 +205,6 @@ ul li:hover ul.login {
 	border-radius: 5px;
 	background: #004ad4;
 	color: #fff;
-	/* margin: 10px auto; */
 	text-align: center;
 }
 
@@ -235,7 +214,6 @@ ul li:hover ul.login {
 	border-radius: 5px;
 	background: #5b7c8d;
 	color: rgb(204, 204, 204);
-	/* margin: 10px auto; */
 	text-align: center;
 }
 .last-logo {
@@ -245,3 +223,4 @@ ul li:hover ul.login {
 	margin-left: 15px;
 	width: 40px;
 }
+
