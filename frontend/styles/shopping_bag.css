@@ -814,3 +814,11 @@ hr {
 	margin: 0.8em 0 0 0.8em;
 }
 
+
+.image img {
+	width: 60px;
+	/* margin-top: -10px; */
+}
+.image {
+	display: flex;
+}

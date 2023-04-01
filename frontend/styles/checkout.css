@@ -851,3 +851,11 @@ hr {
 	padding: 0.7em 2em;
 	justify-content: space-between;
 }
+
+.image img {
+	width: 60px;
+	/* margin-top: -10px; */
+}
+.image {
+	display: flex;
+}

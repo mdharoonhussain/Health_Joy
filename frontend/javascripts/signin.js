@@ -1,14 +1,14 @@
 function check(form) {
     const data = JSON.parse(localStorage.getItem('signIn'))
     const userData = JSON.parse(localStorage.getItem('user')) || []
-    console.log(data)
+    // console.log(data)
         if (form.userid.value == "" || form.pswrd.value == "") {
             alert("Please Enter all the Details")
         }else {
             if (form.pswrd.value.length > 6) {
                 for(i in data) {
                     if(form.userid.value == data[i].userid && form.pswrd.value == data[i].pswrd){
-                        window.open('index.html','_self')
+                        window.location.href = "after_login_landing.html";
                         userData.push({uName: form.userid.value})
                         localStorage.setItem('user', JSON.stringify(userData))
                     }
@@ -30,3 +30,5 @@ function myFunction() {
     }
   }
 
+
+ 
