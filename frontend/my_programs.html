@@ -90,7 +90,7 @@
         <ul>
             <li>
                 <div class="header-menu menu-login">
-                    <div id="menu-img"></div>
+                    <!-- <div id="menu-img"></div> -->
                     <a href="#" class="menu">
                         <div id="showName" style="color: rgb(88, 180, 216);">Hi Visitor!</div>
                         <div>MY FITNESS &#9662</div>
@@ -138,14 +138,28 @@
         </ul>
     </div>
 
-<!-- Till here------------------------------------------------------------- -->
+
 
     <div class="cont">
         <div class="top">
             <h1>Workout Programs</h1>
         </div>
-        <div class="main">
-        
+       <div id="filter">
+        <input type="number" id="lower" />
+        <input type="number" id="upper" />
+        <button id="filter-btn">Filter</button>
+    </div>
+
+        <select id="sort">
+            <option value="">Sort By Price</option>
+            <option value="asc">Ascending</option>
+            <option value="desc">Descending</option>
+          </select>
+          <h2 id="alert"></h2>
+
+        <div id="main">
+        <!-- append data -->
+
 
         </div>
     </div>

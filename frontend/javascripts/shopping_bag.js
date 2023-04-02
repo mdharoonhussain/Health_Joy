@@ -1,83 +1,85 @@
-let bagContainer = document.querySelector(".bag-cont");
-let emptyMessage = document.querySelector(".empty-shopping-bag");
-let checkoutButton = document.querySelector(".proceed-to-checkout");
-function displayCart() {
-	let cartItems = localStorage.getItem("productsInCart");
-	cartItems = JSON.parse(cartItems);
-	if (cartItems) {
-		let productList = document.querySelector(".bag-list");
-		console.log(cartItems);
-		productList.innerHTML = "";
-		let sum = 0;
-		Object.values(cartItems).map((item) => {
-			sum += item.price;
-			productList.innerHTML += `
-			<div class="bag-iteemm">
-				<div class="bag-item-name">
-					<div class="bag-item-name-img">
-						<img src=${item.img} alt="">
-					</div>
-					<div class="bag-item-name-text">
-						<h3>${item.name}</h3>
-					</div>
-				</div>
-				<button class="bag-item-remove" onClick="deleteItem(this.name)" name="${
-					item.tag
-				}"><i class="fas fa-times"></i></button>
-				<div class="bag-item-price"><h3>$${String(item.price)}</h3></div>
-			</div>
-			<hr>
-        `;
-		});
-		sum = (sum * 100) / 100;
-		if (sum == 0) {
-			bagContainer.style.display = "none";
-			emptyMessage.style.display = "block";
-		}
-		console.log(sum);
-		document.querySelector(".tot-amount").textContent = "$" + String(sum);
-	}
+
+let order_container = document.querySelector("#order-container");
+console.log(order_container);
+let orderTotal = document.getElementById("total-amount");
+let visitedData = JSON.parse(localStorage.getItem("wishList")) || [];
+console.log(visitedData);
+displayTable(visitedData);
+
+
+function displayTable(data) {
+	order_container.innerHTML = "";
+  data.forEach((ele, index) => {
+	const div = document.createElement("div");
+	div.setAttribute("class", "div");
+	const img = document.createElement("img");
+	img.setAttribute("src", ele.img);
+	const description = document.createElement("h2");
+	description.innerText = ele.desc;
+	const title = document.createElement("p");
+	title.innerText = ele.title;
+	const duration = document.createElement("p");
+	duration.innerText = ele.duration;
+	const price = document.createElement("h3");
+	price.innerText = ele.price;
+	const quantity = document.createElement("span");
+	const Remove = document.createElement("button");
+	const Increment = document.createElement("button");
+	const Decrement = document.createElement("button");
+	quantity.innerText = ele.quantity;
+	Remove.innerText = "Cancel";
+	Increment.textContent = "+";
+	Decrement.innerText = "-";
+	Remove.addEventListener("click", () => {
+	  visitedData = visitedData.filter((ele1) => {
+		return ele1.id !== ele.id;
+	  });
+	  localStorage.setItem("wishList", JSON.stringify(visitedData));
+	  displayTable(visitedData);
+	});
+	Increment.addEventListener("click", () => {
+	  ele = ele.quantity++;
+	  localStorage.setItem("wishList", JSON.stringify(visitedData));
+	  displayTable(visitedData);
+	});
+	Decrement.addEventListener("click", () => {
+	  if (ele.quantity > 1) {
+		ele = ele.quantity--;
+		localStorage.setItem("wishList", JSON.stringify(visitedData));
+		displayTable(visitedData);
+	  }
+	});
+	div.append(
+	  img,
+	  description,
+	  title,
+	  duration,
+	  price,
+	  Increment,
+	  quantity,
+	  Decrement,
+	  Remove
+	);
+	order_container.append(div);
+  });
+
+  let sum = 0;
+  for (let i = 0; i < visitedData.length; i++) {
+	sum += visitedData[i].price * visitedData[i].quantity;
+    console.log(sum.toFixed(2));
+  }
+  orderTotal.innerText = sum;
 }
 
-function onLoadCartItems() {
-	let productNumbers = localStorage.getItem("itemNumbers");
-	if (productNumbers > 0) {
-		document.querySelector(".header-menu span").textContent = productNumbers;
-	} else {
-		document.querySelector(".header-menu span").textContent = "";
-	}
-}
-
-function deleteItem(item) {
-	let cartItems = localStorage.getItem("productsInCart");
-	cartItems = JSON.parse(cartItems);
-	console.log(cartItems);
-	delete cartItems[item];
-	localStorage.removeItem("productsInCart");
-	localStorage.setItem("productsInCart", JSON.stringify(cartItems));
-	let productNumbers = localStorage.getItem("itemNumbers");
-	productNumbers = Number(productNumbers);
-	localStorage.setItem("itemNumbers", productNumbers - 1);
-	displayCart();
-	onLoadCartItems();
-}
-
-displayCart();
-onLoadCartItems();
-
-
-
-
-
-const data = JSON.parse(localStorage.getItem('signIn'))
-const userData = JSON.parse(localStorage.getItem('user'))
-let output = ""
-for(i in data){
-    for(j in userData){
-        if (data[i].userid === userData[j].uName) {
-           output = `<img class="menu-img" src="${data[i].filename}"/>`
-            document.getElementById('showName').innerHTML = "Hi! " + data[i].fname + "...!"
-        }
-    }
-}
-document.getElementById('menu-img').innerHTML = output
+const couponCode = document.querySelector("#coupon > input");
+const couponBtn = document.querySelector("#coupon > button");
+let flag = true;
+couponBtn.addEventListener("click", () => {
+  if (couponCode.value === "healthjoy23" && flag) {
+	console.log(orderTotal.innerText)
+	let withoutDiscount = +orderTotal.innerText;
+	let afterDiscount = withoutDiscount - withoutDiscount*0.3;
+	flag = false;
+	orderTotal.innerText =Number(afterDiscount).toFixed(2);
+  }
+});
