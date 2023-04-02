@@ -12,4 +12,4 @@ for(i in data){
     }
 }
 
-document.getElementById('menu-img').innerHTML = output
+// document.getElementById('menu-img').innerHTML = output

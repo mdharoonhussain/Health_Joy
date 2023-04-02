@@ -822,3 +822,25 @@ hr {
 .image {
 	display: flex;
 }
+
+#order-container {
+	display: grid;
+	grid-template-columns: repeat(2,1fr);
+	/* border: 2px solid red; */
+	margin: auto;
+	width: 85%;
+	gap: 15px;
+	text-align: center;
+}
+#coupon {
+	height: 50px;
+}
+#coupon button {
+	margin-left: 100px;
+}
+
+#order-container div button,span{
+  width: 100px;
+  /* height: 10px; */
+  font-size: large;
+}

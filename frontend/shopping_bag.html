@@ -102,9 +102,9 @@
 			<ul>
 				<li>
 					<div class="header-menu menu-login">
-						<div id="menu-img"></div>
+						<!-- <div id="menu-img"></div> -->
 						<a href="#" class="menu">
-							<div id="showName" style="color: rgb(88, 180, 216);">Hi Visitor!</div>
+							<div id="showName" style="color: rgb(88, 180, 216);">Hi Md Haroon!</div>
 							<div>MY FITNESS &#9662</div>
 						</a>
 						<ul class="dashboard" id="">
@@ -154,6 +154,13 @@
 			<div class="top">
 				<h1>Shopping Bag</h1>
 			</div>
+			<div id="coupon">
+				<button>Add Coupon Here</button>
+				<input style="width: 200px;" type="text" placeholder="Enter Coupon Code"/>
+			  </div>
+			<div id="order-container">
+				<!-- append here -->
+			</div>
 			<div class="bag-cont">
                 <div class="bag-header">
                     <div class="bag-item-head"><h3>ITEM</h3></div>
@@ -163,8 +170,8 @@
                 <hr>
             
                 <div class="order-total">
-                    <div><h2>Order Total:</h2></div>
-                    <div class="total-price"><h2 class="tot-amount"></h2></div>
+                    <div><h2 id="total">Order Total:</h2></div>
+                    <div class="total-price"><span>$</span><h2 id="total-amount"></h2></div>
                 </div>
 				<hr>
 				<a href="./checkout.html">
