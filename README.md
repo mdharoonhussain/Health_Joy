@@ -1,6 +1,7 @@
 # roomy-thunder-952
 
-Website Details: It is the clone of Fitness blender website where you can search for any diet related to your preference and health and also talk to any trainers and plan your diet accordingly. 
+# Description
+ It is the clone of Fitness blender website where you can search for any diet related to your preference and health and also talk to any trainers and plan your diet accordingly. 
 
 
 ## Deployment Link - https://marvelous-sable-6e8011.netlify.app/
