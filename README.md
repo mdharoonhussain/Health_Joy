@@ -27,12 +27,12 @@
 - Payment Page
 
 ## Screenshots
-![Landing Page](./Screenshot%20(489).png)
-![Signup Page](./Screenshot%20(488).png)
-![Fitness Page](./Screenshot%20(490).png)
-![Nutrition Page](./Screenshot%20(491).png)
-![Experts Page](./Screenshot%20(492).png)
-![Workout Programs](./Screenshot%20(493).png)
-![Shopping Bag](./Screenshot%20(494).png)
-![My Card](./Screenshot%20(495).png)
-![Order SUccessful Page](./Screenshot%20(496).png)
+![Landing Page](./images/Screenshot%20(489).png)
+![Signup Page](./images/Screenshot%20(488).png)
+![Fitness Page](./images/Screenshot%20(490).png)
+![Nutrition Page](./images/Screenshot%20(491).png)
+![Experts Page](./images/Screenshot%20(492).png)
+![Workout Programs](./images/Screenshot%20(493).png)
+![Shopping Bag](./images/Screenshot%20(494).png)
+![My Card](./images/Screenshot%20(495).png)
+![Order SUccessful Page](./images/Screenshot%20(496).png)
